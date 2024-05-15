@@ -1,3 +1,143 @@
-body {
-  background: darkolivegreen;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.game-container {
+  width: 100%;
+}
+.game-container .top {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.game-container .game {
+  height: 80vh;
+  width: 100%;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.game-container .game .game-screen {
+  position: relative;
+  width: 40%;
+  height: 60%;
+  background: darkcyan;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.game-container .game .game-screen .rival {
+  border: solid 1px black;
+  margin: 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.game-container .game .game-screen .rival .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.game-container .game .game-screen .rival .stats .stats-container {
+  height: 30%;
+}
+.game-container .game .game-screen .player {
+  border: solid 1px black;
+  margin: 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.game-container .game .game-screen .player .stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+.game-container .game .game-screen .player .stats .stats-container {
+  height: 40%;
+}
+.game-container .game .game-screen .sprite {
+  background: darkblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.game-container .game .game-screen .sprite img {
+  width: 50%;
+  height: auto;
+}
+.game-container .game .game-screen .stats-container {
+  width: 80%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: rgb(222, 220, 220);
+  padding: 2%;
+  border-top: 3px solid black;
+}
+.game-container .game .game-screen .stats-container .titre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.game-container .game .game-screen .stats-container .titre h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.game-container .game .game-screen .stats-container .titre p {
+  text-transform: uppercase;
+}
+.game-container .game .game-screen .stats-container .pv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+.game-container .game .game-screen .conducteur {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: white;
+  padding: 1%;
+}
+.game-container .game .game-screen .conducteur p {
+  width: 50%;
+  font-size: 2rem;
 }/*# sourceMappingURL=index.css.map */
