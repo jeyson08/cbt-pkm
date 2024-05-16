@@ -55,9 +55,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 .game-container .game .game-screen .rival .stats .stats-container {
   height: 30%;
+  position: absolute;
+  left: -80%;
+  -webkit-animation: animStatsRival 2s forwards;
+          animation: animStatsRival 2s forwards;
 }
 .game-container .game .game-screen .player {
   border: solid 1px black;
@@ -75,9 +80,14 @@
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  position: relative;
 }
 .game-container .game .game-screen .player .stats .stats-container {
   height: 40%;
+  position: absolute;
+  right: -80%;
+  -webkit-animation: animStatsPlayer 2s forwards;
+          animation: animStatsPlayer 2s forwards;
 }
 .game-container .game .game-screen .sprite {
   background: darkblue;
@@ -92,7 +102,7 @@
           justify-content: center;
 }
 .game-container .game .game-screen .sprite img {
-  width: 50%;
+  width: 130px;
   height: auto;
 }
 .game-container .game .game-screen .stats-container {
@@ -140,4 +150,26 @@
 .game-container .game .game-screen .conducteur p {
   width: 50%;
   font-size: 2rem;
+}
+
+@-webkit-keyframes animStatsRival {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes animStatsRival {
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes animStatsPlayer {
+  100% {
+    right: 0;
+  }
+}
+@keyframes animStatsPlayer {
+  100% {
+    right: 0;
+  }
 }/*# sourceMappingURL=index.css.map */

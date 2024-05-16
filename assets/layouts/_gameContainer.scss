@@ -43,9 +43,13 @@
         .stats {
           display: flex;
           align-items: center;
+          position: relative;
 
           .stats-container {
             height: 30%;
+            position: absolute;
+            left: -80%;
+            animation: animStatsRival 2s forwards;
           }
         }
       }
@@ -60,9 +64,13 @@
           display: flex;
           align-items: start;
           justify-content: right;
+          position: relative;
 
           .stats-container {
             height: 40%;
+            position: absolute;
+            right: -80%;
+            animation: animStatsPlayer 2s forwards;
           }
         }
       }
@@ -74,7 +82,7 @@
         justify-content: center;
 
         img {
-          width: 50%;
+          width: 130px;
           height: auto;
         }
       }
@@ -122,5 +130,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes animStatsRival {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes animStatsPlayer {
+  100% {
+    right: 0;
   }
 }
