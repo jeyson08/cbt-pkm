@@ -17,6 +17,7 @@
     justify-content: center;
 
     .game-screen {
+      overflow: hidden;
       position: relative;
       width: 40%;
       height: 60%;
@@ -49,7 +50,29 @@
             height: 30%;
             position: absolute;
             left: -80%;
+            opacity: 0;
             animation: animStatsRival 2s forwards;
+          }
+        }
+
+        .sprite {
+          position: relative;
+          img:first-of-type {
+            position: absolute;
+            top: -150px;
+            width: 130px;
+            height: auto;
+            opacity: 1;
+            filter: brightness(0);
+            animation: animSpriteRival 1s forwards,
+              animImgPrincipalRival 0.2s forwards 2s;
+          }
+          img:nth-of-type(2) {
+            position: absolute;
+            width: 130px;
+            height: auto;
+            visibility: hidden;
+            animation: animImgRival 0.2s forwards 2s;
           }
         }
       }
@@ -70,7 +93,21 @@
             height: 40%;
             position: absolute;
             right: -80%;
+            opacity: 0;
             animation: animStatsPlayer 2s forwards;
+          }
+        }
+
+        .sprite {
+          position: relative;
+          img {
+            position: absolute;
+            bottom: -50px;
+            width: 0;
+            height: auto;
+            // filter: brightness(100);
+            filter: brightness(100) drop-shadow(0px 0px 30px white);
+            animation: animSpritePlayer 1s forwards;
           }
         }
       }
@@ -81,10 +118,10 @@
         align-items: start;
         justify-content: center;
 
-        img {
-          width: 130px;
-          height: auto;
-        }
+        // img {
+        //   width: 130px;
+        //   height: auto;
+        // }
       }
 
       .stats-container {
@@ -124,23 +161,11 @@
         background: white;
         padding: 1%;
 
-        p {
-          width: 50%;
-          font-size: 2rem;
-        }
+        // span {
+        //   width: 50%;
+        //   // font-size: 1.2rem;
+        // }
       }
     }
-  }
-}
-
-@keyframes animStatsRival {
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes animStatsPlayer {
-  100% {
-    right: 0;
   }
 }

@@ -5,6 +5,165 @@
           box-sizing: border-box;
 }
 
+@-webkit-keyframes animStatsRival {
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animStatsRival {
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animStatsPlayer {
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes animStatsPlayer {
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes animSpritePlayer {
+  20% {
+    -webkit-filter: brightness(80) drop-shadow(0px 0px 30px white);
+            filter: brightness(80) drop-shadow(0px 0px 30px white);
+    width: 30px;
+  }
+  40% {
+    -webkit-filter: brightness(60) drop-shadow(0px 0px 30px white);
+            filter: brightness(60) drop-shadow(0px 0px 30px white);
+    width: 50px;
+  }
+  60% {
+    -webkit-filter: brightness(20) drop-shadow(0px 0px 30px white);
+            filter: brightness(20) drop-shadow(0px 0px 30px white);
+    width: 70px;
+  }
+  80% {
+    -webkit-filter: brightness(10) drop-shadow(0px 0px 30px white);
+            filter: brightness(10) drop-shadow(0px 0px 30px white);
+    width: 100px;
+  }
+  100% {
+    width: 130px;
+    bottom: 70px;
+    -webkit-filter: brightness(1);
+            filter: brightness(1);
+  }
+}
+@keyframes animSpritePlayer {
+  20% {
+    -webkit-filter: brightness(80) drop-shadow(0px 0px 30px white);
+            filter: brightness(80) drop-shadow(0px 0px 30px white);
+    width: 30px;
+  }
+  40% {
+    -webkit-filter: brightness(60) drop-shadow(0px 0px 30px white);
+            filter: brightness(60) drop-shadow(0px 0px 30px white);
+    width: 50px;
+  }
+  60% {
+    -webkit-filter: brightness(20) drop-shadow(0px 0px 30px white);
+            filter: brightness(20) drop-shadow(0px 0px 30px white);
+    width: 70px;
+  }
+  80% {
+    -webkit-filter: brightness(10) drop-shadow(0px 0px 30px white);
+            filter: brightness(10) drop-shadow(0px 0px 30px white);
+    width: 100px;
+  }
+  100% {
+    width: 130px;
+    bottom: 70px;
+    -webkit-filter: brightness(1);
+            filter: brightness(1);
+  }
+}
+@-webkit-keyframes animSpriteRival {
+  20% {
+    -webkit-filter: brightness(0);
+            filter: brightness(0);
+  }
+  40% {
+    -webkit-filter: brightness(0);
+            filter: brightness(0);
+  }
+  60% {
+    -webkit-filter: brightness(0.1);
+            filter: brightness(0.1);
+  }
+  80% {
+    -webkit-filter: brightness(0.2);
+            filter: brightness(0.2);
+  }
+  100% {
+    -webkit-filter: brightness(1);
+            filter: brightness(1);
+    top: 0;
+  }
+}
+@keyframes animSpriteRival {
+  20% {
+    -webkit-filter: brightness(0);
+            filter: brightness(0);
+  }
+  40% {
+    -webkit-filter: brightness(0);
+            filter: brightness(0);
+  }
+  60% {
+    -webkit-filter: brightness(0.1);
+            filter: brightness(0.1);
+  }
+  80% {
+    -webkit-filter: brightness(0.2);
+            filter: brightness(0.2);
+  }
+  100% {
+    -webkit-filter: brightness(1);
+            filter: brightness(1);
+    top: 0;
+  }
+}
+@-webkit-keyframes animImgRival {
+  50% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes animImgRival {
+  50% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes animImgPrincipalRival {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes animImgPrincipalRival {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .game-container {
   width: 100%;
 }
@@ -35,6 +194,7 @@
           justify-content: center;
 }
 .game-container .game .game-screen {
+  overflow: hidden;
   position: relative;
   width: 40%;
   height: 60%;
@@ -61,8 +221,31 @@
   height: 30%;
   position: absolute;
   left: -80%;
+  opacity: 0;
   -webkit-animation: animStatsRival 2s forwards;
           animation: animStatsRival 2s forwards;
+}
+.game-container .game .game-screen .rival .sprite {
+  position: relative;
+}
+.game-container .game .game-screen .rival .sprite img:first-of-type {
+  position: absolute;
+  top: -150px;
+  width: 130px;
+  height: auto;
+  opacity: 1;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+  -webkit-animation: animSpriteRival 1s forwards, animImgPrincipalRival 0.2s forwards 2s;
+          animation: animSpriteRival 1s forwards, animImgPrincipalRival 0.2s forwards 2s;
+}
+.game-container .game .game-screen .rival .sprite img:nth-of-type(2) {
+  position: absolute;
+  width: 130px;
+  height: auto;
+  visibility: hidden;
+  -webkit-animation: animImgRival 0.2s forwards 2s;
+          animation: animImgRival 0.2s forwards 2s;
 }
 .game-container .game .game-screen .player {
   border: solid 1px black;
@@ -86,8 +269,22 @@
   height: 40%;
   position: absolute;
   right: -80%;
+  opacity: 0;
   -webkit-animation: animStatsPlayer 2s forwards;
           animation: animStatsPlayer 2s forwards;
+}
+.game-container .game .game-screen .player .sprite {
+  position: relative;
+}
+.game-container .game .game-screen .player .sprite img {
+  position: absolute;
+  bottom: -50px;
+  width: 0;
+  height: auto;
+  -webkit-filter: brightness(100) drop-shadow(0px 0px 30px white);
+          filter: brightness(100) drop-shadow(0px 0px 30px white);
+  -webkit-animation: animSpritePlayer 1s forwards;
+          animation: animSpritePlayer 1s forwards;
 }
 .game-container .game .game-screen .sprite {
   background: darkblue;
@@ -100,10 +297,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.game-container .game .game-screen .sprite img {
-  width: 130px;
-  height: auto;
 }
 .game-container .game .game-screen .stats-container {
   width: 80%;
@@ -146,30 +339,4 @@
   height: 20%;
   background: white;
   padding: 1%;
-}
-.game-container .game .game-screen .conducteur p {
-  width: 50%;
-  font-size: 2rem;
-}
-
-@-webkit-keyframes animStatsRival {
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes animStatsRival {
-  100% {
-    left: 0;
-  }
-}
-@-webkit-keyframes animStatsPlayer {
-  100% {
-    right: 0;
-  }
-}
-@keyframes animStatsPlayer {
-  100% {
-    right: 0;
-  }
 }/*# sourceMappingURL=index.css.map */

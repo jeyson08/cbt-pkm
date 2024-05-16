@@ -3,3 +3,78 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@keyframes animStatsRival {
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animStatsPlayer {
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animSpritePlayer {
+  20% {
+    filter: brightness(80) drop-shadow(0px 0px 30px white);
+    width: 30px;
+  }
+  40% {
+    filter: brightness(60) drop-shadow(0px 0px 30px white);
+    width: 50px;
+  }
+  60% {
+    filter: brightness(20) drop-shadow(0px 0px 30px white);
+    width: 70px;
+  }
+  80% {
+    filter: brightness(10) drop-shadow(0px 0px 30px white);
+    width: 100px;
+  }
+  100% {
+    width: 130px;
+    bottom: 70px;
+    filter: brightness(1);
+  }
+}
+
+@keyframes animSpriteRival {
+  20% {
+    filter: brightness(0);
+  }
+  40% {
+    filter: brightness(0);
+  }
+  60% {
+    filter: brightness(0.1);
+  }
+  80% {
+    filter: brightness(0.2);
+  }
+  100% {
+    filter: brightness(1);
+    top: 0;
+  }
+}
+
+@keyframes animImgRival {
+  50% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes animImgPrincipalRival {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

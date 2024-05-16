@@ -44,4 +44,18 @@ const loop = () => {
   }, 10);
 };
 
-loop();
+setTimeout(() => {
+  loop();
+}, 1500);
+
+// ----------- CRIS ------------ //
+
+// const ring = () => {
+//   const audio = new Audio();
+//   audio.src = "../audio/cri-dracolosse.mp3";
+//   audio.play();
+// };
+
+// window.addEventListener("click", () => {
+//   ring();
+// });
