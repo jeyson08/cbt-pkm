@@ -1,7 +1,7 @@
 // ----------- DEPART (jusqu'aux choix) ------------ //
 
 // ----------- CONDUCTEUR ------------ //
-
+const gameScreen = document.querySelector(".game-screen");
 const conducteur = document.querySelector(".conducteur");
 let scriptArray = [
   "Un DRACOLOSSE sauvage apparaît !",
@@ -10,6 +10,8 @@ let scriptArray = [
 let wordIndex = 0;
 let letterIndex = 0;
 const attaquesPlayer = ["Laser glace", "Hydrocanon"];
+const pvRival = 374;
+const pvPlayer = 374;
 
 // console.log(scriptArray[1][0]);
 
@@ -34,6 +36,9 @@ const attachEventListeners = () => {
       conducteur.innerHTML = `<p id="${attaquesPlayer[0]}">${attaquesPlayer[0]}</p>
         <p id="${attaquesPlayer[1]}">${attaquesPlayer[1]}</p>
         <p id="retour">Retour</p>`;
+      //   document.getElementById("Laser glace").addEventListener("click", () => {
+      //     laserGlace();
+      //   });
       document.getElementById("retour").addEventListener("click", () => {
         showInitialOptions();
       });
@@ -57,16 +62,22 @@ const showInitialOptions = () => {
   attachEventListeners();
 };
 
+const laserGlace = () => {
+  console.log("pchhhhhhh");
+  const laserGlaceSprite = document.createElement("div");
+  laserGlaceSprite.classList.add("laserglace-container");
+  gameScreen.appendChild(laserGlaceSprite);
+};
+
+laserGlace();
+
 const loop = () => {
   setTimeout(() => {
     if (wordIndex >= scriptArray.length) {
-      //   wordIndex = 0;
-      //   letterIndex = 0;
-      //   loop();
-      showInitialOptions();
       conducteur.style.display = "flex";
       conducteur.style.justifyContent = "space-around";
       conducteur.style.alignItems = "center";
+      showInitialOptions();
     } else if (letterIndex < scriptArray[wordIndex].length) {
       createLetter();
       letterIndex++;
